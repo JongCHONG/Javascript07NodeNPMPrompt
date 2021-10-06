@@ -1,5 +1,5 @@
 var args = process.argv.slice(2)
-if (args.length !== 5) {
+if (args.length !== 3) {
     console.log("Error")
 } else {
     calculate(args)
