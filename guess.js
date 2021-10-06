@@ -1,6 +1,6 @@
-var prompt = require("prompt");
+var prompt = require("prompt")
 
-prompt.start();
+prompt.start()
 
 var mysteryNum = random()
 console.log(mysteryNum)
