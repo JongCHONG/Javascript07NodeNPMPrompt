@@ -1,6 +1,8 @@
 var prompt = require("prompt")
 var colors = require('colors')
 const randomWordFR = require('random-word-fr')
+var result = ""
+var isMotus = false
 
 prompt.start()
 
@@ -11,17 +13,26 @@ console.log(mysteryWord)
 
 function motus() {
     prompt.get({ name: "motus", description: `Le mot commence par ${mysteryWord[0]}....` }, function (err, res) { // permet de paramétrer la question
-        if (res.motus.length === 5){
-            if (res.motus !== mysteryWord){
+        if (res.motus.length === 5){ //si le mot entrée a 5 lettres
+            if (res.motus !== mysteryWord){  // si les deux mots sont differents
+                result =  ""
                 for (var i = 0; i < res.motus.length; i++) {
+                    isMotus = false
                     for(var j = 0; j < mysteryWord.length; j++) {
                         if (res.motus[i] === mysteryWord[j]) {
-                            console.log(res.motus[i].red)
-                        } else {
-                            console.log(res.motus[i])
-                        }
+                            isMotus = true
+                            if (res.motus.indexOf(res.motus[i]) === mysteryWord.indexOf(mysteryWord[j])) {
+                                result = result + res.motus[i].red
+                            } else {
+                                result = result + res.motus[i].yellow
+                            }
+                        } 
+                    }
+                    if (motus == false) {
+                        result = result + res.motus[i]
                     }
                 }
+                console.log(result)
                 console.log("Essayez encore!")
                 motus()
             } else {
