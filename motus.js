@@ -23,12 +23,14 @@ function motus() {
                             isMotus = true
                             if (res.motus.indexOf(res.motus[i]) === mysteryWord.indexOf(mysteryWord[j])) {
                                 result = result + res.motus[i].red
+                                break
                             } else {
                                 result = result + res.motus[i].yellow
+                                break
                             }
                         } 
                     }
-                    if (motus == false) {
+                    if (isMotus == false) {
                         result = result + res.motus[i]
                     }
                 }
