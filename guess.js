@@ -11,6 +11,7 @@ function play() {
         console.log("Bravo!")
     } else if (res.guess < mysteryNum){
         console.log("C'est plus")
+        console.log(res.guess)
         play() // relance le prompt si la saisie n'est pas valide
     }else if (res.guess > mysteryNum){
         console.log("C'est moins")

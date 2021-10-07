@@ -38,7 +38,7 @@ function motus() {
                 console.log("Essayez encore!")
                 motus()
             } else {
-                console.log("MOTUS! Bien joué!")
+                console.log("Tututututu MOTUS! Bien joué!")
             }
         } else {
             console.log("Le mot doit contenir 5 lettres...")
