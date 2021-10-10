@@ -12,7 +12,7 @@ do {
 console.log(mysteryWord)
 
 function motus() {
-    prompt.get({ name: "motus", description: `Le mot commence par ${mysteryWord[0]}....` }, function (err, res) { // permet de paramétrer la question
+    prompt.get({ name: "motus", description: `Le mot commence par ${mysteryWord[0].red}....` }, function (err, res) { // permet de paramétrer la question
         if (res.motus.length === 5){ //si le mot entrée a 5 lettres
             if (res.motus !== mysteryWord){  // si les deux mots sont differents
                 result =  ""
@@ -22,11 +22,12 @@ function motus() {
                         if (res.motus[i] === mysteryWord[j]) {
                             isMotus = true
                             if (res.motus.indexOf(res.motus[i]) === mysteryWord.indexOf(mysteryWord[j])) {
+                                console.log(res.motus.indexOf(res.motus[i]) +", "+ mysteryWord.indexOf(mysteryWord[j]))
                                 result = result + res.motus[i].red
-                                break
+                                // break
                             } else {
                                 result = result + res.motus[i].yellow
-                                break
+                                // break
                             }
                         } 
                     }
